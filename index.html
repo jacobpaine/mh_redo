@@ -17,19 +17,19 @@
 	<body id = "body">
 		<section ng-controller="TodoCtrl">
 		<!-- ng-repeat is a for-in -->
-		<ul ng-repeat="li in list track by $index">
+		<ul ng-repeat="li in master track by $index">
 		<!-- 	title refers to the JSON, li refers to HTML li -->
 			<li> {{li.artist}} </li>
 			<li> {{li.title}} </li>	
 			<li> {{li.album}} </li>
 
 		</ul>
-		<ul ng-repeat="li in list2 track by $index">
+<!-- 		<ul ng-repeat="li in list2 track by $index">
 			<li> {{li.artist}} </li>
 			<li> {{li.title}} </li>	
 			<li> {{li.album}} </li>
 
-		</ul>
+		</ul> -->
 
 
 

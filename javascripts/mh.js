@@ -26,24 +26,27 @@ app.controller("TodoCtrl",
       );
   });
 
-  var all = $q.all([getSongs.promise, getSongs2.promise]);
-    all.then(success);
-    function success(songs){
-                  $scope.list = [songs];
-                  $scope.list2 = [songs];
-                  console.log("songs", songs);
-    }
+  // var all = $q.all([getSongs, getSongs2]);
+  //   all.then(success);
+  //   function success(songs){
+  //                 // $scope.list = [songs];
+  //                 // $scope.list2 = [songs];
+  //                 var aoa = songs;
+  //                 $scope.master = songs;
+  //                 console.log("mastersongs", $scope.master);
+
+  //   }
 
 	getSongs.then(function success(songs){
       console.log("songs", songs);
-            $scope.list = songs;
+            $scope.master = songs;
   	}, function (error) {
     	console.log("Failed");
   	});
 
-  getSongs2.then(function success(songs){
-      console.log("songs2", songs);
-            $scope.list2 = songs;
+  getSongs2.then(function success(songs2){
+      console.log("songs2", songs2);
+            $scope.master = $scope.master.concat(songs2);
     }, function (error) {
       console.log("Failed");
     });
