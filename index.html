@@ -15,7 +15,7 @@
 		<a href="html">Profile</a>
 	</header>
 	<body id = "body">
-		<section ng-controller="TodoCtrl">
+		<section id="songs-in-list" ng-controller="SongsControl">
 		<!-- ng-repeat is a for-in -->
 		<ul ng-repeat="li in list track by $index">
 		<!-- 	title refers to the JSON, li refers to HTML li -->
@@ -29,9 +29,20 @@
 			<li> {{li.title}} </li>	
 			<li> {{li.album}} </li>
 
-		</ul>
+			<input type="text" ng-model="searchText" />
+			<div>
+			  <ul ng-repeat="todo in todos | filter: searchText">
+			    <li>{{todo.name}}</li>
+			  </ul>
+			</div>
 
 
+
+
+
+
+
+			
 
 		      <p><label for="song-length">Song Length:</label></p>
 		      <input type="range" name="song-length" min="0" max="20" step="0.5" value="0" >

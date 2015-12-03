@@ -1,7 +1,9 @@
 var app = angular.module("MusicApp", []);
 
-app.controller("TodoCtrl", 
+app.controller("SongsControl", 
 	["$scope", "$http", "$q", function($scope, $http, $q) {
+    $scope.Albums = "";
+
 
 	// For use of Q in Angular
 	var getSongs = $q(function(resolve, reject){
@@ -26,12 +28,15 @@ app.controller("TodoCtrl",
       );
   });
 
-  var all = $q.all([getSongs.promise, getSongs2.promise]);
+  var all = $q.all(getSongs.promise, getSongs2.promise);
     all.then(success);
     function success(songs){
+      console.log("songs", songs);
                   $scope.list = [songs];
                   $scope.list2 = [songs];
-                  console.log("songs", songs);
+                  // $scope.master = [songs];
+                  // console.log("songs[]", [songs]);
+                  // $scope.master = $scope.list.concat($scope.list2)
     }
 
 	getSongs.then(function success(songs){
