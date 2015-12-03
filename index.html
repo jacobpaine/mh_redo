@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html ng-app="MusicApp">
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+
+		  <meta charset="utf-8">
+		  <title>NSS Starter Kit</title>
+	</head>
+
+	<header>
+		<a href="">View Music <b>|</b></a>
+		<a href="html">Add Music </a><b>|</b>
+		<a href="html">Profile</a>
+	</header>
+	<body id = "body">
+		<section ng-controller="TodoCtrl">
+		<!-- ng-repeat is a for-in -->
+		<ul ng-repeat="li in list track by $index">
+		<!-- 	title refers to the JSON, li refers to HTML li -->
+			<li> {{li.artist}} </li>
+			<li> {{li.title}} </li>	
+			<li> {{li.album}} </li>
+
+		</ul>
+		<ul ng-repeat="li in list2 track by $index">
+			<li> {{li.artist}} </li>
+			<li> {{li.title}} </li>	
+			<li> {{li.album}} </li>
+
+		</ul>
+
+
+
+		      <p><label for="song-length">Song Length:</label></p>
+		      <input type="range" name="song-length" min="0" max="20" step="0.5" value="0" >
+
+			<div class="artist">
+			    <p><label for =album>Artist:</label></p>
+			    <p><select name="album"></p>
+					<option value=:"album1">Artist Name1</option>   
+					<option value=:"album2">Artist Name2</option>
+					<option value=:"album3">Artist Name3</option>      
+				</select>
+			</div>
+
+			<div class = "album">
+			    <p><label for =album>Album:</label></p>
+			    <p><select name="album">
+					<option value=:"album1">Album Name1</option>   
+					<option value=:"album2">Album Name2</option>
+					<option value=:"album3">Album Name3</option>      
+				</select></p>
+			</div>
+		     
+		      	<label>Genre:
+					<div class="genre">
+						<ol>
+							<div class="left">
+					 			<li><input type="checkbox" value="1">Rock</li>
+								<li><input type="checkbox" value="1">Classical</li>
+								<li><input type="checkbox" value="1">Pop</li>
+							</div>
+							<div class="right">
+								<li><input type="checkbox" value="1">Jazz</li>
+								<li><input type="checkbox" value="1">Blues</li>
+								<li><input type="checkbox" value="1">Hip Hop</li>
+							</div>
+					 	</ol>
+					</div>
+	 				<input id = "more" type="button" name="more" value="More">
+	 				<input id = "delete" class = "clear-mesage" type="button" name="delete" value="Delete	">
+	 			</label>
+		</section>
+
+		<div class="rightbox">
+			<div id = "songbox">	
+			</div>
+		</div>
+		<script src="lib/bower_components/angular/angular.min.js"></script>
+		<script type = "text/javascript" src="javascripts/mh.js"></script> 
+
+	</body>
+</html>
